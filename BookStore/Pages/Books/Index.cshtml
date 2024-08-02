@@ -1,8 +1,5 @@
 ﻿@page
 @model BookStore.Pages.Books.IndexModel
-@{
-}
-
 <br />
 <h2>List of books</h2>
 
@@ -24,7 +21,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach(var book in Model.listBooks)
+        @foreach (var book in Model.listBooks)
         {
             <tr>
                 <td>@book.id</td>
@@ -33,13 +30,13 @@
                 <td>@book.publishYear</td>
                 <td>@book.originalLanguage</td>
                 <td>@book.genre</td>
- 
+
                 <td>
                     <a class="btn btn-primary btn-sm" href="/Books/Edit?id=@book.id">Edit book</a>
                     <a class="btn btn-danger btn-sm" href="/Books/Delete?id=@book.id">Delete book</a>
                 </td>
             </tr>
         }
-        
+
     </tbody>
 </table>
