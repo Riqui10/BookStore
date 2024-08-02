@@ -4,7 +4,27 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #ffe6cc; /* Set your desired background color */
+        box-sizing: border-box;
+    }
+
+    .background-full {
+        min-height: 540px; /* Ensures the background covers the full height of the viewport */
+        width: 100%;
+        background-color: inherit; /* Inherit background color from body */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<div class="background-full">
+    <div class="text-center">
+        <h2 class="display-4">Welcome to Rijad's Bookstore</h2>
+    </div>
 </div>

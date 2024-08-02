@@ -7,10 +7,10 @@
 <h2>List of books</h2>
 
 <form method="get">
-    <input type="text" name="SearchTerm" value="@Model.SearchTerm" placeholder="Search by book name or author..." />
+    <input type="text" name="SearchTerm" value="@Model.SearchTerm" placeholder="Search by book name or author..." style="width: 300px;" />
     <button type="submit" class="btn btn-primary btn-sm">Search</button>
 </form>
-
+<br />
 <a class='btn btn-primary btn-sm' href='/Books/Create'>Add new book</a>
 <table class="table">
     <thead>
