@@ -31,7 +31,7 @@ namespace BookStore.Pages.Books
                                 bookInfo.id = "" + reader.GetInt32(0);
                                 bookInfo.bookName = reader.GetString(1);
                                 bookInfo.author = reader.GetString(2);
-                                bookInfo.publishYear = reader.GetDateTime(3).ToString();
+                                bookInfo.publishYear = reader.GetDateTime(3).Year.ToString();
                                 bookInfo.originalLanguage = reader.GetString(4);
                                 bookInfo.genre = reader.GetString(5);
                                 

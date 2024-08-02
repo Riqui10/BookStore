@@ -20,11 +20,12 @@ namespace BookStore.Pages.Books
             bookInfo.publishYear = Request.Form["year"];
             bookInfo.originalLanguage = Request.Form["language"];
             bookInfo.genre = Request.Form["genre"];
+            bookInfo.coverImage = Request.Form["image"];
             
 
             if (bookInfo.bookName.Length==0 || bookInfo.author.Length == 0 ||
                 bookInfo.publishYear.Length == 0 || bookInfo.originalLanguage.Length == 0
-                || bookInfo.genre.Length == 0)
+                || bookInfo.genre.Length == 0 || bookInfo.coverImage.Length ==0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -39,8 +40,8 @@ namespace BookStore.Pages.Books
                 {
                     connection.Open();
                     String sql = "INSERT INTO books " +
-                                 "(bookName, author, publishYear, originalLanguage, genre) VALUES " +
-                                 "(@bookName, @author, @publishYear, @originalLanguage, @genre);";
+                                 "(bookName, author, publishYear, originalLanguage, genre, coverImage) VALUES " +
+                                 "(@bookName, @author, @publishYear, @originalLanguage, @genre, @coverImage);";
                     using(SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@bookName", bookInfo.bookName);
@@ -48,6 +49,7 @@ namespace BookStore.Pages.Books
                         command.Parameters.AddWithValue("@publishYear", bookInfo.publishYear);
                         command.Parameters.AddWithValue("@originalLanguage", bookInfo.originalLanguage);
                         command.Parameters.AddWithValue("@genre", bookInfo.genre);
+                        command.Parameters.AddWithValue("@coverImage", bookInfo.coverImage);
                         
 
                         command.ExecuteNonQuery();
@@ -66,6 +68,7 @@ namespace BookStore.Pages.Books
             bookInfo.publishYear = "";
             bookInfo.originalLanguage = "";
             bookInfo.genre = "";
+            bookInfo.coverImage = "";
             
             successMessage = "New book Added Correctly";
 
